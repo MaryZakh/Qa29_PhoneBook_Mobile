@@ -3,6 +3,7 @@ package screens;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class ContactListScreen extends BaseScreen{
     public ContactListScreen(AppiumDriver<AndroidElement> driver) {
@@ -28,9 +29,16 @@ public class ContactListScreen extends BaseScreen{
 
 
     public AuthenticationScreen logout(){
-        menuOptions.click();
-        logoutBtn.click();
+        if(activityTextView.getText().equals("Contact list")) {
+            menuOptions.click();
+            logoutBtn.click();
+        }
         return new AuthenticationScreen(driver);
+    }
+
+    public ContactListScreen isAccountOpened(){
+        Assert.assertTrue(isActivityTitleDisplayed("Contact list"));
+        return this;
     }
 
 }

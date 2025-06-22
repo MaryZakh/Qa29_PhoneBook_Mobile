@@ -12,9 +12,8 @@ import screens.SplashScreen;
 public class LoginTests extends AppiumConfig {
 
 
-
     @Test
-    public void loginSuccess(){
+    public void loginSuccess() {
 //      boolean result =   new SplashScreen(driver)
 //                .checkCurrentVersion("Version 1.0.0")
         boolean result = new AuthenticationScreen(driver)
@@ -27,7 +26,7 @@ public class LoginTests extends AppiumConfig {
 
 
     @Test
-    public void loginSuccessModel(){
+    public void loginSuccessModel() {
 //        boolean result =  new SplashScreen(driver)
 //                .checkCurrentVersion("Version 1.0.0")
 
@@ -38,10 +37,46 @@ public class LoginTests extends AppiumConfig {
         Assert.assertTrue(result);
     }
 
+    @Test
+    public void loginSuccessModel2() {
+        Assert.assertTrue(new AuthenticationScreen(driver)
+                .filLoginRegistrationForm(Auth.builder().email("margo@gmail.com").password("Mmar123456$").build())
+                .submitLogin()
+                .isActivityTitleDisplayed("Contact list"));
+
+
+    }
+
+    @Test
+    public void loginWrongEmail(){
+        new AuthenticationScreen(driver)
+                .filLoginRegistrationForm(Auth.builder().email("margogmail.com").password("Mmar123456$").build())
+                .submitLoginNegative()
+                .isErrorMessageHasText("Login or Password incorrect");
+
+    }
+
+    @Test
+    public void loginWrongPassword(){
+        new AuthenticationScreen(driver)
+                .filLoginRegistrationForm(Auth.builder().email("margo@gmail.com").password("Mmar123").build())
+                .submitLoginNegative()
+                .isErrorMessageHasText("Login or Password incorrect");
+
+    }
+
+    @Test
+    public void loginUnregistered(){
+        new AuthenticationScreen(driver)
+                .filLoginRegistrationForm(Auth.builder().email("mar@mar.com").password("Mmar123654$").build())
+                .submitLoginNegative()
+                .isErrorMessageHasText("Login or Password incorrect");
+
+    }
 
 
     @AfterMethod
-    public void postCondition(){
-       new ContactListScreen(driver).logout();
+    public void postCondition() {
+        new ContactListScreen(driver).logout();
     }
 }
