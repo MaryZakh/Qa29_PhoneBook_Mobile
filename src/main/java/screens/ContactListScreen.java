@@ -34,8 +34,14 @@ public class ContactListScreen extends BaseScreen {
     @FindBy(xpath = "//*[@resource-id='com.sheygam.contactapp:id/rowContainer']")
     List<AndroidElement> contactList;
 
-    @FindBy(id="android:id/button1")
+    @FindBy(id = "android:id/button1")
     AndroidElement yesBtn;
+
+    @FindBy(id = "com.sheygam.contactapp:id/emptyTxt")
+    AndroidElement noContactsHereTextView;
+
+    int countBefore;
+    int countAfter;
 
 
     public boolean isActivityTitleDisplayed(String text) {
@@ -80,22 +86,49 @@ public class ContactListScreen extends BaseScreen {
 
     public ContactListScreen deleteFirstContact() {
         isActivityTitleDisplayed("Contact list");
+
+        countBefore = contactList.size();
+        System.out.println(countBefore);
+
         AndroidElement first = contactList.get(0);
         Rectangle rectangle = first.getRect();
-        int xFrom = rectangle.getX()+ rectangle.getWidth()/8;
-        int y = rectangle.getY()+rectangle.getHeight()/2;
-        int xTo = rectangle.getWidth()-xFrom;
+        int xFrom = rectangle.getX() + rectangle.getWidth() / 8;
+        int y = rectangle.getY() + rectangle.getHeight() / 2;
+        int xTo = rectangle.getWidth() - xFrom;
 
-        TouchAction<?>touchAction = new TouchAction<>(driver);
-        touchAction.longPress(PointOption.point(xFrom,y))
-                .moveTo(PointOption.point(xTo,y)).release().perform();
+        TouchAction<?> touchAction = new TouchAction<>(driver);
+        touchAction.longPress(PointOption.point(xFrom, y))
+                .moveTo(PointOption.point(xTo, y)).release().perform();
+
+        should(yesBtn, 8);
+        yesBtn.click();
+
+        pause(3000);
+
+        countAfter = contactList.size();
+        System.out.println(countAfter);
 
 
         return this;
     }
 
     public ContactListScreen isListSizeLessOnOne() {
-        //Assert.assertEquals(countBefore-countAfter,1);
+        Assert.assertEquals(countBefore - countAfter, 1);
         return this;
     }
-}
+
+    public ContactListScreen removeAllContacts() {
+        pause(10);
+        while (contactList.size() > 0) {
+            deleteFirstContact();
+
+        }
+        return this;
+    }
+
+    public ContactListScreen isNoContactsHere(){
+        isShouldHave(noContactsHereTextView,"No Contacts. Add One more!",10);
+        return this;
+    }
+
+    }

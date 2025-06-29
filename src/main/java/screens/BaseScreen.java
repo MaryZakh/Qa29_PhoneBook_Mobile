@@ -43,4 +43,12 @@ public class BaseScreen {
         Assert.assertTrue(alert.getText().contains(text));
         alert.accept();
     }
+
+    public void pause(int time){
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

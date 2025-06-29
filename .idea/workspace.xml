@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07076deb-93ef-4a90-90f4-b7299e54b370" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Contact.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/screens/AddNewContactScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/AddNewContactTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/DeleteContactTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/AuthenticationScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/AuthenticationScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/BaseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/BaseScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/ContactListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/ContactListScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DeleteContactTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DeleteContactTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,24 +87,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.AddNewContactTests.createContactWithEmptyName.executor": "Run",
-    "Gradle.AddNewContactTests.createNewContactSuccess.executor": "Run",
-    "Gradle.AddNewContactTests.executor": "Run",
-    "Gradle.DeleteContactTests.deleteFirstContact.executor": "Run",
-    "Gradle.LaunchTest.launch.executor": "Run",
-    "Gradle.LoginTests.executor": "Run",
-    "Gradle.LoginTests.loginSuccess.executor": "Run",
-    "Gradle.LoginTests.loginSuccessModel.executor": "Run",
-    "Gradle.LoginTests.loginWrongEmail.executor": "Run",
-    "Gradle.LoginTestsSecond.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.AddNewContactTests.createContactWithEmptyName.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AddNewContactTests.createNewContactSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AddNewContactTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.DeleteContactTests.deleteFirstContact.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LaunchTest.launch.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.loginSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.loginSuccessModel.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.loginWrongEmail.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTestsSecond.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Gradle.DeleteContactTests.deleteFirstContact">
+}</component>
+  <component name="RunManager" selected="Gradle.DeleteContactTests.removeAllContactsSuccess">
     <configuration name="AddNewContactTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -205,7 +201,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LoginTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DeleteContactTests.removeAllContactsSuccess" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -218,7 +214,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.LoginTests&quot;" />
+            <option value="&quot;tests.DeleteContactTests.removeAllContactsSuccess&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -231,11 +227,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.DeleteContactTests.removeAllContactsSuccess" />
         <item itemvalue="Gradle.DeleteContactTests.deleteFirstContact" />
+        <item itemvalue="Gradle.AddNewContactTests.createNewContactSuccess" />
         <item itemvalue="Gradle.AddNewContactTests" />
         <item itemvalue="Gradle.AddNewContactTests.createContactWithEmptyName" />
-        <item itemvalue="Gradle.AddNewContactTests.createNewContactSuccess" />
-        <item itemvalue="Gradle.LoginTests" />
       </list>
     </recent_temporary>
   </component>
